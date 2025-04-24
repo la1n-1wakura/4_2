@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1 class="mb-4">Latest News</h1>
+    {% for blog in blogs %}
+        <div class="card mb-4">
+            <div class="card-body">
+                <h2 class="card-title">{{ blog.title }}</h2>
+                <p class="card-text">{{ blog.content }}</p>
+                <p class="text-muted">Posted by: {{ blog.author.username }}</p>
+                <a href="#" class="btn btn-primary">Read More</a>
+            </div>
+        </div>
+    {% else %}
+        <div class="alert alert-info">No blogs yet. Be the first to post!</div>
+    {% endfor %}
+{% endblock %}  
